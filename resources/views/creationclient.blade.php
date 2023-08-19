@@ -45,11 +45,11 @@
             <div class="card-header">
             <h1 class="text-center">Saisir les infromations</h1>
             </div>
-            @if(session()->has("success"))
+             <!-- @if(session()->has("success"))
               <div class="alert alert-success">
                 <p>{{session()->get('success')}}</p>
               </div>
-            @endif
+            @endif-->
             <!-- @if ($errors->any())
             <div class="alert alert-danger">
               <ul >
@@ -59,18 +59,18 @@
               </ul>
             </div>
             @endif -->
-            <form id="quickForm" method="post" action="{{route('client.ajouter')}}" novalidate="novalidate" >
+            <form id="quickForm" method="post" action="{{route('client.ajouter')}}">
               @csrf
               <div class="row">
               <!-- left column -->
                 <div class="card-body col-6">
                   <div class="form-group">
-                    <label for="">Nom</label>
-                    <input type="text" name="nom_client" class="form-control" id="" placeholder="Nom client">
+                    <label>Nom</label>
+                    <input type="text" name="nom_client" class="form-control" id="" placeholder="Nom client"  required>
                   </div>
                   <div class="form-group">
                     <label for="">Prenom</label>
-                    <input type="text" name="prenom_client" class="form-control" id="" placeholder="Prenom client">
+                    <input type="text" name="prenom_client" class="form-control" id="" placeholder="Prenom client" required>
                   </div>
               
                   <div class="form-group">
@@ -84,13 +84,11 @@
                     </select>
                   </div>
                   <div class="form-group">
-                    <label for="">Utilisateur</label>
-                    <select class="form-control" name="utilisateur_id">
-                      <option value="">Selectionner l'utilisateur</option>
-                      @foreach($utilisateurs as $utilisateur)
-                      <option value="{{$utilisateur->id}}">{{$utilisateur->prenom_user}}</option>
-                      @endforeach
-                    </select>
+                    <label for="">Num Piéce</label>
+                    <input type="text" name="num_piece_client" class="form-control" id="" placeholder="Num piéce" required>
+                  </div>
+                  <div class="form-group">
+                    <input type="hidden" name="utilisateur_id" id="" value="{{ Auth::user()->id }}">
                   </div>
               
                   <div class="card-footer">
@@ -99,17 +97,14 @@
                 </div>
               <!-- right column -->
                 <div class="card-body col-6">
-                  <div class="form-group">
-                    <label for="">Num Piéce</label>
-                    <input type="text" name="num_piece_client" class="form-control" id="" placeholder="Num client">
-                  </div>
+                  
                   <div class="form-group">
                     <label for="">Telephone</label>
-                    <input type="tel" name="telephone_client" class="form-control" id="" placeholder="Telephone client">
+                    <input type="tel" name="telephone_client" class="form-control" id="" placeholder="Telephone client" required>
                   </div>
                   <div class="form-group">
                     <label for="">Adresse</label>
-                    <input type="text" name="adresse_client" class="form-control" id="" placeholder="adresse client">
+                    <input type="text" name="adresse_client" class="form-control" id="" placeholder="adresse client" required>
                   </div>
                   <div class="form-group">
                     <label for="">Solde</label>

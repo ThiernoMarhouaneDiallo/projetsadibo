@@ -5,10 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Partenaire;
 use App\Models\Utilisateur;
+use App\Models\User;
 class PartenaireController extends Controller
 {
     public function creationpartenaire () {
-        $utilisateurs = Utilisateur::all();
+        $utilisateurs = User::all();
         return view('creationpartenaire',compact("utilisateurs"));
     }
  

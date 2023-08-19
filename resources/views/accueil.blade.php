@@ -88,11 +88,11 @@
     <div class="sidebar">
       <!-- Sidebar utilisateur connecté -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex bg-success">
-        <div class="image">
+        <!-- <div class="image">
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-        </div>
+        </div>-->
         <div class="info">
-          <a href="#" class="d-block">Thierno Marhouane</a>
+          <a href="#" class="d-block"> {{ Auth::user()->name }}</a>
         </div>
       </div>
 
@@ -119,7 +119,7 @@
           <li class="nav-item">
             <a href="{{route('listeutilisateur')}}" class="nav-link">
               <i class="nav-icon far fa-circle text-info"></i>
-              <p>Utilisateurs</p>
+              <p>Employés</p>
             </a>
           </li>
           <li class="nav-item">
@@ -137,7 +137,7 @@
           <li class="nav-item">
             <a href="{{route('listedepot')}}" class="nav-link">
               <i class="nav-icon far fa-circle text-info"></i>
-              <p>Depôt/Retrait</p>
+              <p>Depôt</p>
             </a>
           </li>
           <li class="nav-item">
@@ -150,12 +150,6 @@
             <a href="{{route('listepartenaire')}}" class="nav-link">
               <i class="nav-icon far fa-circle text-info"></i>
               <p>Partenaire</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="" class="nav-link">
-              <i class="nav-icon far fa-circle text-info"></i>
-              <p>Taux/Commission</p>
             </a>
           </li>
           <li class="nav-item">
@@ -199,9 +193,9 @@
         <div class="row">
           <div class="col-lg-3 col-6">
             <div class="small-box ">
-              <div class="inner">
-                <h3>5</h3>
-                <p>Total Utilisateur</p>
+              <div class="inner text-center">
+                <h4>Total Employés</h4>
+                <h5>{{$utilisateurs}}</h5>
               </div>
               <div class="icon">
                 <i class="ion ion-bag"></i>
@@ -211,10 +205,9 @@
           </div>
           <div class="col-lg-3 col-6">
             <div class="small-box ">
-              <div class="inner">
-                <h3>53</h3>
-
-                <p>Total Client</p>
+              <div class="inner text-center">
+                <h4>Total clients</h4>
+                <h5>{{$clients}}</h5>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
@@ -224,10 +217,9 @@
           </div>
           <div class="col-lg-3 col-6">
             <div class="small-box ">
-              <div class="inner">
-                <h3>44</h3>
-
-                <p>Total Depots</p>
+              <div class="inner text-center">
+                <h4>Nombre de depots</h4>
+                <h5>{{$depots}}</h5>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>
@@ -237,10 +229,9 @@
           </div>
           <div class="col-lg-3 col-6">
             <div class="small-box ">
-              <div class="inner">
-                <h3>65</h3>
-
-                <p>Total Retrait</p>
+              <div class="inner text-center">
+                <h4>Nombre de retraits</h4>
+                <h5>{{$retraits}}</h5>
               </div>
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>
@@ -255,52 +246,79 @@
         <div class="row">
           <div class="col-lg-3 col-6">
             <div class="small-box ">
-              <div class="inner">
-                <h3>5</h3>
-                <p>Total Benefice</p>
+              <div class="inner text-center">
+                <h4> Montant deposé</h4>
+                <h5>{{$total_dep_caisse}}</h5>
               </div>
               <div class="icon">
                 <i class="ion ion-bag"></i>
               </div>
-              <a href="#" class="small-box-footer bg-info">Voir plus <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{{route('listedepot')}}" class="small-box-footer bg-success">Voir plus <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <div class="col-lg-3 col-6">
             <div class="small-box ">
-              <div class="inner">
-                <h3>53</h3>
-
-                <p>Total Dette</p>
+              <div class="inner text-center">
+                <h4>Montant retiré</h4>
+                <h5>{{$total_ret_caisse}}</h5>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="#" class="small-box-footer bg-success">Voir plus <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{{route('listeretrait')}}" class="small-box-footer bg-info">Voir plus <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
           <div class="col-lg-3 col-6">
             <!-- small box -->
             <div class="small-box ">
-              <div class="inner">
-                <h3>44</h3>
-
-                <p>Total caisse</p>
+              <div class="inner text-center">
+                <h4>benefice depots</h4>
+                 <h5>{{$montant_benefice_depot}}</h5>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>
               </div>
-              <a href="#" class="small-box-footer bg-warning">Voir plus <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{{route('listecaisse')}}" class="small-box-footer bg-danger">Voir plus <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
           <div class="col-lg-3 col-6">
             <!-- small box -->
             <div class="small-box ">
-              <div class="inner">
-                <h3>65</h3>
+              <div class="inner text-center">
+                <h4>benefice retraits</h4>
+                <h5>{{$montant_benefice_retrait}}</h5>
+              </div>
+              <div class="icon">
+                <i class="ion ion-pie-graph"></i>
+              </div>
+              <a href="{{route('listecaisse')}}" class="small-box-footer bg-warning">Voir plus <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+        </div>
 
-                <p>Total Partenaire</p>
+        <!-- Debut row 3 -->
+        <div class="row">
+          <div class="col-lg-3 col-6">
+            <div class="small-box ">
+              <div class="inner text-center">
+                <h4>benefice en attente</h4>
+                <h5>{{$montant_benefice_attente}}</h5>
+              </div>
+              <div class="icon">
+                <i class="ion ion-bag"></i>
+              </div>
+              <a href="{{route('listecaisse')}}" class="small-box-footer bg-info">Voir plus <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box ">
+              <div class="inner text-center">
+                <h4>Total partenaires</h4>
+                <h5>{{$partenaires}}</h5>
               </div>
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>
@@ -308,58 +326,23 @@
               <a href="{{route('listepartenaire')}}" class="small-box-footer bg-danger">Voir plus <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
+          @role('Admin')
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box ">
+              <div class="inner text-center">
+                <h4>Total partenaires</h4>
+                <h5>{{$partenaires}}</h5>
+              </div>
+              <div class="icon">
+                <i class="ion ion-pie-graph"></i>
+              </div>
+              <a href="{{route('listepartenaire')}}" class="small-box-footer bg-danger">Voir plus <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          @endrole
           <!-- ./col -->
         </div>
-        <!-- Fin row 2 -->
-
-        <!-- Main row -->
-        <div class="row">
-            <!-- Debut Carte 1 -->
-            <div class="card col-6">
-              <div class="card-header">
-                <h3 class="card-title">
-                  <i class="fas fa-chart-pie mr-1"></i>
-                  <h3>Liste des depôt du jour</h3>
-                </h3>
-              </div>
-              <div class="card-body">
-                <div class="tab-content p-0">
-                  <!-- Morris chart - Sales -->
-                  <div class="chart tab-pane active" id="revenue-chart"
-                       style="position: relative; height: 10em;">
-                      <canvas id="revenue-chart-canvas" height="300" style="height: 10em;"></canvas>
-                   </div>
-                  <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 10em;">
-                    <canvas id="sales-chart-canvas" height="300" style="height: 10em;"></canvas>
-                  </div>
-                </div>
-              </div><!-- /.card-body -->
-            </div>
-            <!-- Fin carte 1 -->
-
-            <!-- Debut Carte 2 -->
-            <div class="card col-6  ">
-              <div class="card-header">
-                <h3 class="card-title">
-                  <i class="fas fa-chart-pie mr-1"></i>
-                  <h3>Liste des payements du jour</h3>
-                </h3>
-              </div>
-              <div class="card-body">
-                <div class="tab-content p-0">
-                  <!-- Morris chart - Sales -->
-                  <div class="chart tab-pane active" id="revenue-chart"
-                       style="position: relative; height: 10em;">
-                      <canvas id="revenue-chart-canvas" height="300" style="height: 10em;"></canvas>
-                   </div>
-                  <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 10em;">
-                    <canvas id="sales-chart-canvas" height="300" style="height: 10em;"></canvas>
-                  </div>
-                </div>
-              </div><!-- /.card-body -->
-            </div>
-            <!-- Fin carte 1 -->
-          <!-- right col -->
         </div>
         <!-- /.row (main row) -->
       </div><!-- /.container-fluid -->
@@ -389,7 +372,6 @@
 <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
 <script src="{{asset('plugins/jquery-ui/jquery-ui.min.js')}}"></script>
 <script src="{{asset('js/pages/dashboard.js')}}"></script>
-<script src="{{asset('js/demo.js')}}"></script>
 <script src="{{asset('js/adminlte.js')}}"></script>
 <script src="{{asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
 <script src="{{asset('plugins/summernote/summernote-bs4.min.js')}}"></script>

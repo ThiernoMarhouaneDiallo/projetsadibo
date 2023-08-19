@@ -17,7 +17,7 @@ class CreateClientsTable extends Migration
             $table->string("telephone_client");
             $table->string("adresse_client")->nullable();
             $table->double("solde_client")->nullable();
-            $table->foreignId("utilisateur_id")->constrained("utilisateurs");
+            $table->foreignId("utilisateur_id")->constrained("users");
             $table->timestamps();
         });
         Schema::enableForeignKeyConstraints();

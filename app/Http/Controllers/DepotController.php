@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Depot;
 use App\Models\Utilisateur;
 use App\Models\Client;
-use App\Models\Receveur;
+//use App\Models\Receveur;
 use App\Models\Benefice;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 
@@ -14,16 +15,16 @@ class DepotController extends Controller
 {
     public function creationdepot () {
 
-        $utilisateurs = Utilisateur::all();
+        $utilisateurs = User::all();
         $clients = Client::all();
         $benefices = Benefice::all();
-        $receveurs = Receveur::all();
-        return view('creationdepot',compact("utilisateurs","clients","receveurs","benefices"));
+        //$receveurs = Receveur::all();
+        return view('creationdepot',compact("utilisateurs","clients","benefices"));
     }
     
     public function enregistrer(Request $request){
 
-         //dd($request->all());
+        //dd($request->all());
         Depot::create($request->all());
         
         $montant_deposer = $request->montant_dep;
@@ -54,7 +55,7 @@ class DepotController extends Controller
 
     //cette methode permet d'afficher la liste des depots
     public function listedepot () {
-        $depots = Depot::orderBy("created_at","desc")->with('client','receveur','utilisateur')->get();
+        $depots = Depot::orderBy("created_at","desc")->with('client','utilisateur')->get();
         return view('listedepot',compact("depots"));
     }
 
@@ -67,6 +68,8 @@ class DepotController extends Controller
     public function update (Request $request,$id) {
         $depot = Depot::where('id',$id)->update([
             'code_dep' =>$request->code_dep,
+            'nom_rec_dep' =>$request->nom_rec_dep,
+            'numero_rec_dep' =>$request->numero_rec_dep,
             'montant_dep' =>$request->montant_dep,
             'commission_dep' =>$request->commission_dep,
             'taux_dep' =>$request->taux_dep,
@@ -82,7 +85,7 @@ class DepotController extends Controller
 
                                             
         $depot = Depot::where('id',$id)->first();
-        $depots = Depot::orderBy("created_at","desc")->with('client','receveur','utilisateur')->get();
+        $depots = Depot::orderBy("created_at","desc")->with('client','utilisateur')->get();
 
         return view('listedepot',compact('depot','depots'));
     }
@@ -91,14 +94,6 @@ class DepotController extends Controller
     public function payer ($id) {
         $depot = Depot::where('id',$id)->first();
         return view('creationretrait',compact('depot'));
-    }
-    
-
-    //Cette methode permet d'annuler un depot
-    public function annuler (Depot $depot) {
-        $nom_complet = $receveur->nom_receveur ." ". $receveur->prenom_receveur;
-        $receveur->delete();
-        return back()->with("successdelete","Receveur '$nom_complet' supprimé avec succés");
     }
 
     public function show($id)

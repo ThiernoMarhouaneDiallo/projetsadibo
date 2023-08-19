@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use App\Models\Utilisateur;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Benefice extends Model
@@ -13,6 +14,6 @@ class Benefice extends Model
    
     public function utilisateur()
     {
-        return $this->belongsTo('App\Models\Utilisateur');
+        return $this->belongsTo('App\Models\User');
     }
 }

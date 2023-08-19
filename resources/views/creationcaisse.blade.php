@@ -70,12 +70,7 @@
                   </div>
                   <div class="form-group">
                     <label for="">Utilisateur</label>
-                    <select class="form-control" name="user_id">
-                      <option value="">Selectionner l'utilisateur</option>
-                      @foreach($utilisateurs as $utilisateur)
-                      <option value="{{$utilisateur->id}}">{{$utilisateur->prenom_user}}</option>
-                      @endforeach
-                    </select>
+                    <input type="hidden" name="user_id" id="" value="{{ Auth::user()->id }}">
                   </div>
                   <div class="form-group">
                     <input type="hidden" name="montant_benefice_retrait" value="0" readonly="readonly"  class="form-control" id="" placeholder="">

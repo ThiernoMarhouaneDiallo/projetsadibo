@@ -21,7 +21,7 @@ class CreateReceveursTable extends Migration
             $table->string("num_piece_receveur")->nullable();
             $table->string("telephone_receveur");
             $table->string("adresse_receveur")->nullable();
-            $table->foreignId("utilisateur_id")->constrained("utilisateurs");
+            $table->foreignId("utilisateur_id")->constrained("users");
             $table->timestamps();
         });
     }

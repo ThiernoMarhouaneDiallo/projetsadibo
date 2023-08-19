@@ -54,26 +54,26 @@
               </ul>
             </div>
             @endif
-            <form id="quickForm" method="post" action="{{route('depot.ajouter')}}" novalidate="novalidate" >
+            <form id="quickForm" method="post" action="{{route('depot.ajouter')}}">
               @csrf
               <div class="row">
               <!-- left column -->
                 <div class="card-body col-6">
                   <div class="form-group">
                     <label for="">Code</label>
-                    <input type="text" name="code_dep" class="form-control" id="" placeholder="Nom receveur">
+                    <input type="text" name="code_dep" class="form-control" id="" placeholder="Nom receveur" required>
                   </div>
                   <div class="form-group">
                     <label for="">Montant</label>
-                    <input type="text" name="montant_dep" class="form-control" id="" placeholder="Prenom receveur">
+                    <input type="text" name="montant_dep" class="form-control" id="" placeholder="Prenom receveur" required>
                   </div>
                   <div class="form-group">
                     <label for="">Commission</label>
-                    <input type="text" name="commission_dep" class="form-control" id="" placeholder="Prenom receveur">
+                    <input type="text" name="commission_dep" class="form-control" id="" placeholder="Prenom receveur" required>
                   </div>
                   <div class="form-group">
                     <label for="">Taux d'echange</label>
-                    <input type="text" name="taux_dep" class="form-control" id="" placeholder="Prenom receveur">
+                    <input type="text" name="taux_dep" class="form-control" id="" placeholder="Prenom receveur" required>
                   </div>            
                   <div class="card-footer">
                     <button type="submit" class="btn btn-success">Enregistrer</button>
@@ -82,18 +82,11 @@
               <!-- right column -->
                 <div class="card-body col-6">
                  <div class="form-group">
-                    <label for="">Utilisateur</label>
-                    <select class="form-control" name="utilisateur_id">
-                      <option value="">Selectionner l'utilisateur</option>
-                       @foreach($utilisateurs as $utilisateur)
-                      <option value="{{$utilisateur->id}}">{{$utilisateur->prenom_user}}</option>
-                      @endforeach -->
-                    </select>
+                    <input type="hidden" name="utilisateur_id" id="" value="{{ Auth::user()->id }}">
                   </div>  
-                  <div class="card-body col-6">
                  <div class="form-group">
                     <label for="">Caisse</label>
-                    <select class="form-control" name="benefice_id">
+                    <select class="form-control" name="benefice_id" required >
                       <option value="">Selectionner la caisse</option>
                        @foreach($benefices as $benefice)
                       <option value="{{$benefice->id}}">{{$benefice->nom_caisse}}</option>
@@ -102,22 +95,21 @@
                   </div>     
                   <div class="form-group">
                     <label for="">Client</label>
-                    <select class="form-control" name="client_id">
+                    <select class="form-control" name="client_id" required>
                       <option value="">Selectionner le client</option>
                        @foreach($clients as $client)
-                      <option value="{{$client->id}}">{{$client->prenom_client}}</option>
+                      <option value="{{$client->id}}">{{$client->prenom_client.'  '.$client->telephone_client}}</option>
                       @endforeach -->
                     </select>
                   </div>     
                   <div class="form-group">
-                    <label for="">Receveur</label>
-                    <select class="form-control" name="receveur_id">
-                      <option value="">Selectionner le receveur</option>
-                      @foreach($receveurs as $receveur)
-                      <option value="{{$receveur->id}}">{{$receveur->prenom_receveur}}</option>
-                      @endforeach
-                    </select>
-                  </div>     
+                    <label for="">Nom receveur</label>
+                    <input type="text" name="nom_rec_dep" class="form-control" id="" placeholder="Nom receveur" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="">Numero receveur</label>
+                    <input type="text" name="numero_rec_dep" class="form-control" id="" placeholder="Numero receveur" required>
+                  </div>
                 </div>
               </div>    
               <!-- /.card-body -->

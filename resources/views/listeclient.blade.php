@@ -48,10 +48,11 @@
             <tr>
               <th class="sorting sorting_asc" tabindex="1" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">Nom</th>
               <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Prenom</th>
-              <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">code</th>
               <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">solde</th>
               <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Adresse</th>
-              <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Date</th>
+              <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Telephone</th>
+              <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Num Piéce</th>
+              <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Date</th>         
               <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Action</th>
            </tr>
               </thead>
@@ -60,9 +61,10 @@
               <tr>
               <th scope="row">{{$client->nom_client}}</th>
               <td>{{$client->prenom_client}}</td>
-              <td>{{$client->code_client}}</td>
               <td>{{$client->solde_client}}</td>
               <td>{{$client->adresse_client}}</td>
+              <td>{{$client->telephone_client}}</td>
+              <td>{{$client->num_piece_client}}</td>
               <td>{{$client->created_at}}</td>
               <td>
               <a class="btn btn-primary" href="{{route('edite_client',$client->id)}}">Edite</a>

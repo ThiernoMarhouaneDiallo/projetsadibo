@@ -24,12 +24,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-9" style="display: flex; justify-content: right;">
-          <h1>ESPACE D'ADMINISTRATION DES UTILISATEURS SADIBO TRANSFERT</h1>
+          <h1>ESPACE D'ADMINISTRATION DES EMPLOYES SADIBO TRANSFERT</h1>
         </div>
         <div class="col-sm-3">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a class="btn btn-primary" href="{{route('accueil')}}">Accueil</a></li>
-            <li class="breadcrumb-item active"><a class="btn btn-primary" href="{{route('creationutilisateur')}}">Ajouter un utilisateur</a></li>
+            <li class="breadcrumb-item active"><a class="btn btn-primary" href="{{route('creationutilisateur')}}">Ajouter un employé</a></li>
           </ol>
         </div>
       </div>

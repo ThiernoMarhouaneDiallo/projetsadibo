@@ -59,7 +59,7 @@
             <tbody>
             @foreach($caisses as $caisse)
               <tr>
-              <td>{{$caisse->utilisateur->prenom_user.' '.$caisse->utilisateur->nom_user}}</td>
+              <td>{{$caisse->utilisateur->name}}</td>
               <td>{{$caisse->nom_caisse}}</td>
               <td>{{$caisse->adresse_caisse}}</td>
               <td>{{$caisse->total_dep_caisse}}</td>

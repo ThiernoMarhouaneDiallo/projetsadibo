@@ -24,7 +24,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-9" style="display: flex; justify-content: right;">
-          <h1>ESPACE CREATION DES UTILISATEURS SADIBO TRANSFERT</h1>
+          <h1>ESPACE CREATION DES EMPLOYES SADIBO TRANSFERT</h1>
         </div>
         <div class="col-sm-3">
           <ol class="breadcrumb float-sm-right">
@@ -54,22 +54,22 @@
               </ul>
             </div>
             @endif
-            <form id="quickForm" method="post" action="{{route('utilisateur.ajouter')}}" novalidate="novalidate" >
+            <form id="quickForm" method="post" action="{{route('utilisateur.ajouter')}}"  >
               @csrf
               <div class="row">
               <!-- left column -->
                 <div class="card-body col-6">
                   <div class="form-group">
                     <label for="">Nom</label>
-                    <input type="text" name="nom_user" class="form-control" id="" placeholder="Nom utilisateur">
+                    <input type="text" name="nom_user" class="form-control" id="" placeholder="Nom utilisateur" required>
                   </div>
                   <div class="form-group">
                     <label for="">Prenom</label>
-                    <input type="text" name="prenom_user" class="form-control" id="" placeholder="Prenom utilisateur">
+                    <input type="text" name="prenom_user" class="form-control" id="" placeholder="Prenom utilisateur" required>
                   </div>
                   <div class="form-group">
                     <label for="">Nationnalitée</label>
-                    <select class="form-control" name="nationnalite_user">
+                    <select class="form-control" name="nationnalite_user" required>
                       <option value="Guinée" selected="selected">Guinée</option>
                       <option value="Mali">Mali</option>
                       <option value="France">France</option>
@@ -80,11 +80,11 @@
                   
                   <div class="form-group">
                     <label for="">Email</label>
-                    <input type="email" name="email_user" class="form-control" id="" placeholder="Email utilisateur">
+                    <input type="email" name="email_user" class="form-control" id="" placeholder="Email utilisateur" required>
                   </div>
                   <div class="form-group">
                     <label for="">Num Piéce</label>
-                    <input type="text" name="num_piece_user" class="form-control" id="" placeholder="Num utilisateur">
+                    <input type="text" name="num_piece_user" class="form-control" id="" placeholder="Num utilisateur" required>
                   </div>
                   
                   <div class="card-footer">
@@ -95,15 +95,15 @@
                 <div class="card-body col-6">
                 <div class="form-group">
                     <label for="">Telephone</label>
-                    <input type="tel" name="telephone_user" class="form-control" id="" placeholder="Telephone utilisateur">
+                    <input type="tel" name="telephone_user" class="form-control" id="" placeholder="Telephone utilisateur" required>
                   </div>
                   <div class="form-group">
                     <label for="">Adresse</label>
-                    <input type="text" name="adresse_user" class="form-control" id="" placeholder="adresse utilisateur">
+                    <input type="text" name="adresse_user" class="form-control" id="" placeholder="adresse utilisateur" required>
                   </div>
                   <div class="form-group">
                     <label for="">Fonction</label>
-                    <select class="form-control" name="fonction_user">
+                    <select class="form-control" name="fonction_user" required>
                       <option value="Administrateur" selected="selected">Administrateur</option>
                       <option value="Caissier">Caissier</option>
                       <option value="Partenaire">Partenaire</option>
@@ -113,11 +113,11 @@
                   </div>
                   <div class="form-group">
                     <label for="">Année de naissance</label>
-                    <input type="date" name="naissance_user" class="form-control" id="" placeholder="Naissance utilisateur">
+                    <input type="date" name="naissance_user" class="form-control" id="" placeholder="Naissance utilisateur" required>
                   </div>
                   <div class="form-group">
                     <label for="">Mot de passe</label>
-                    <input type="password" name="password_user" class="form-control" id="" placeholder="">
+                    <input type="password" name="password_user" class="form-control" id="" placeholder="" required>
                   </div>
                 </div>
               </div>    

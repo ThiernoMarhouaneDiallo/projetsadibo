@@ -22,7 +22,7 @@ class CreateBeneficesTable extends Migration
             $table->double("montant_benefice_retrait");
             $table->double("montant_benefice_depot");
             $table->double("montant_benefice_attente");
-            $table->foreignId("utilisateur_id")->constrained("utilisateurs");
+            $table->foreignId("utilisateur_id")->constrained("users");
             $table->timestamps();
         });
     }

@@ -61,15 +61,15 @@
                 <div class="card-body col-6">
                   <div class="form-group">
                     <label for="">Nom</label>
-                    <input type="text" name="nom_partenaire" class="form-control" id="" placeholder="Nom partenaire">
+                    <input type="text" name="nom_partenaire" class="form-control" id="" placeholder="Nom partenaire" required>
                   </div>
                   <div class="form-group">
                     <label for="">Prenom</label>
-                    <input type="text" name="prenom_partenaire" class="form-control" id="" placeholder="Prenom partenaire">
+                    <input type="text" name="prenom_partenaire" class="form-control" id="" placeholder="Prenom partenaire" required>
                   </div>
                   <div class="form-group">
                     <label for="">Nationnalitée</label>
-                    <select class="form-control" name="nationnalite_partenaire">
+                    <select class="form-control" name="nationnalite_partenaire" required>
                       <option value="Guinée" selected="selected">Guinée</option>
                       <option value="Mali">Mali</option>
                       <option value="France">France</option>
@@ -80,21 +80,16 @@
 
                   <div class="form-group">
                     <label for="">Utilisateur</label>
-                    <select class="form-control" name="utilisateur_id">
-                      <option value="">Selectionner l'utilisateur</option>
-                      @foreach($utilisateurs as $utilisateur)
-                      <option value="{{$utilisateur->id}}">{{$utilisateur->prenom_user}}</option>
-                      @endforeach
-                    </select>
+                    <input type="hidden" name="utilisateur_id" id="" value="{{ Auth::user()->id }}">
                   </div>
                   
                   <div class="form-group">
                     <label for="">Email</label>
-                    <input type="email" name="email_partenaire" class="form-control" id="" placeholder="Email partenaire">
+                    <input type="email" name="email_partenaire" class="form-control" id="" placeholder="Email partenaire" required>
                   </div>
                   <div class="form-group">
                     <label for="">Num Piéce</label>
-                    <input type="text" name="num_piece_partenaire" class="form-control" id="" placeholder="Num partenaire">
+                    <input type="text" name="num_piece_partenaire" class="form-control" id="" placeholder="Num partenaire" required>
                   </div>
                   
                   <div class="card-footer">

@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 use App\Models\Depot;
 use App\Models\Utilisateur;
+use App\Models\User;
 use App\Models\Client;
-use App\Models\Receveur;
+//use App\Models\Receveur;
 use App\Models\Retrait;
 use App\Models\Benefice;
 use Illuminate\Http\Request;
@@ -13,12 +14,11 @@ class RetraitController extends Controller
 {
     public function creationretrait () {
 
-        $utilisateurs = Utilisateur::all();
+        $utilisateurs = User::all();
         $clients = Client::all();
-        $receveurs = Receveur::all();
         $depots = Depot::all();
         $benefices = Benefice::all();
-        return view('creationretrait',compact("utilisateurs","clients","receveurs","depots","benefices"));
+        return view('creationretrait',compact("utilisateurs","clients","depots","benefices"));
     }
 
     //cette fonction permet d'effectuer un paiement
@@ -26,15 +26,17 @@ class RetraitController extends Controller
         //Enregistrement du depot
         Retrait::create([
             'code_retrait' =>$request->code_dep,
+            'nom_rec_retrait' =>$request->nom_rec_dep,
+            'numero_rec_retrait' =>$request->numero_rec_dep,
             'montant_retrait' =>$request->montant_dep,
             'commission_retrait' =>$request->commission_dep,
             'taux_retrait' =>$request->taux_dep,
             'utilisateur_id' =>$request->utilisateur_id,
             'client_id' =>$request->client_id,
-            'receveur_id' =>$request->receveur_id
+            'benefice_id' =>$request->benefice_id
         ]);
 
-        // Calcul solde du client
+        // Calcul solde du client 
         $montant_deposer = $request->montant_dep;
         $ancien_solde = Client::where('id',$request->client_id)->first()->solde_client;
         $solde_actuel = $ancien_solde - $montant_deposer;
@@ -65,7 +67,7 @@ class RetraitController extends Controller
 
     //cette methode permet d'afficher la liste des tous les retraits
     public function listeretrait () {
-        $retraits = Retrait::orderBy("created_at","desc")->with('client','receveur','utilisateur')->get();
+        $retraits = Retrait::orderBy("created_at","desc")->with('client','utilisateur','benefice')->get();
         return view('listeretrait',compact("retraits"));
     }
 

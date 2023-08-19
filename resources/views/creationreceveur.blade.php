@@ -54,22 +54,22 @@
               </ul>
             </div>
             @endif
-            <form id="quickForm" method="post" action="{{route('receveur.ajouter')}}" novalidate="novalidate" >
+            <form id="quickForm" method="post" action="{{route('receveur.ajouter')}}" >
               @csrf
               <div class="row">
               <!-- left column -->
                 <div class="card-body col-6">
                   <div class="form-group">
                     <label for="">Nom</label>
-                    <input type="text" name="nom_receveur" class="form-control" id="" placeholder="Nom receveur">
+                    <input type="text" name="nom_receveur" class="form-control" id="" placeholder="Nom receveur" required>
                   </div>
                   <div class="form-group">
                     <label for="">Prenom</label>
-                    <input type="text" name="prenom_receveur" class="form-control" id="" placeholder="Prenom receveur">
+                    <input type="text" name="prenom_receveur" class="form-control" id="" placeholder="Prenom receveur" required>
                   </div>
                   <div class="form-group">
                     <label for="">Nationnalitée</label>
-                    <select class="form-control" name="nationnalite_receveur">
+                    <select class="form-control" name="nationnalite_receveur" required>
                       <option value="Guinée" selected="selected">Guinée</option>
                       <option value="Mali">Mali</option>
                       <option value="France">France</option>
@@ -80,12 +80,7 @@
 
                   <div class="form-group">
                     <label for="">Utilisateur</label>
-                    <select class="form-control" name="utilisateur_id">
-                      <option value="">Selectionner l'utilisateur</option>
-                      @foreach($utilisateurs as $utilisateur)
-                      <option value="{{$utilisateur->id}}">{{$utilisateur->prenom_user}}</option>
-                      @endforeach
-                    </select>
+                    <input type="hidden" name="utilisateur_id" id="" value="{{ Auth::user()->id }}">
                   </div>                  
                   <div class="card-footer">
                     <button type="submit" class="btn btn-success">Enregistrer</button>
@@ -95,15 +90,15 @@
                 <div class="card-body col-6">
                  <div class="form-group">
                     <label for="">Num Piéce</label>
-                    <input type="text" name="num_piece_receveur" class="form-control" id="" placeholder="Num receveur">
+                    <input type="text" name="num_piece_receveur" class="form-control" id="" placeholder="Num receveur" required>
                   </div>
                  <div class="form-group">
                     <label for="">Telephone</label>
-                    <input type="tel" name="telephone_receveur" class="form-control" id="" placeholder="Telephone receveur">
+                    <input type="tel" name="telephone_receveur" class="form-control" id="" placeholder="Telephone receveur" required>
                   </div>
                   <div class="form-group">
                     <label for="">Adresse</label>
-                    <input type="text" name="adresse_receveur" class="form-control" id="" placeholder="adresse receveur">
+                    <input type="text" name="adresse_receveur" class="form-control" id="" placeholder="adresse receveur" required>
                   </div>
                 </div>
               </div>    

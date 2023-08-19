@@ -65,7 +65,7 @@ Route::get('/listeretrait',[RetraitController::class,"listeretrait"])->name("lis
 Route::delete('/retrait/{retrait}',[RetraitController::class,"annuler"])->name("retrait.annuler");
 
 //les routes Benefice
-Route::get( '/',[BeneficeController::class,"accueil"])->name("accueil");
+Route::get( '/',[BeneficeController::class,"accueil"])->name("accueil")->middleware('auth');
 Route::get('/creationcaisse',[BeneficeController::class,"creationcaisse"])->name("creationcaisse");
 Route::get('/listecaisse',[BeneficeController::class,"listecaisse"])->name("listecaisse");
 Route::post('/caisse/creation',[BeneficeController::class,"enregistrer"])->name("caisse.ajouter");

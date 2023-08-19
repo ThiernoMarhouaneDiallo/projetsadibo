@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
 
 class Partenaire extends Model
 {
@@ -12,7 +13,7 @@ class Partenaire extends Model
 
     public function utilisateur()
     {
-        return $this->belongsTo('App\Models\Utilisateur');
+        return $this->belongsTo('App\Models\User');
     }
 }
 

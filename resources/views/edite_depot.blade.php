@@ -83,17 +83,21 @@
                 </div>
               <!-- right column -->
                 <div class="card-body col-6">
-                 <div class="form-group">
+                  <div class="form-group">
                     <label for="">Utilisateur</label>
-                    <input type="text" name="" value="{{$depot->utilisateur->prenom_user.' '.$depot->utilisateur->nom_user}}" readonly="readonly" class="form-control" id="" placeholder="">
-                  </div>      
+                    <input type="hidden" name="utilisateur_id" id="" value="{{ Auth::user()->id }}">
+                  </div>     
                   <div class="form-group">
                     <label for="">Client</label>
                     <input type="text"  value="{{$depot->client->prenom_client.' '.$depot->client->nom_client}}" readonly="readonly" class="form-control" id="" placeholder="">
                   </div>     
                   <div class="form-group">
-                    <label for="">Receveur</label>
-                    <input type="text" name="" value="{{$depot->receveur->prenom_receveur.' '.$depot->receveur->nom_receveur}}" readonly="readonly" class="form-control" id="" placeholder="">
+                    <label for="">Nom receveur</label>
+                    <input type="text" name="nom_rec_dep" value="{{$depot->nom_rec_dep}}" class="form-control" id="" placeholder="Nom receveur">
+                  </div>
+                  <div class="form-group">
+                    <label for="">Numero receveur</label>
+                    <input type="text" name="numero_rec_dep" value="{{$depot->numero_rec_dep}}" class="form-control" id="" placeholder="Numero receveur">
                   </div> 
 
                     <!-- <input type="hidden" name="client_id"  class="form-control" id="" placeholder="Nom receveur"> -->

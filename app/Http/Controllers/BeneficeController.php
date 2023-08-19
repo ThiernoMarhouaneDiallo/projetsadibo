@@ -3,13 +3,32 @@
 namespace App\Http\Controllers;
 use App\Models\Utilisateur;
 use App\Models\Benefice;
+use App\Models\Partenaire;
+use App\Models\Client;
+use App\Models\Retrait;
+use App\Models\Depot;
 use Illuminate\Http\Request;
 
 class BeneficeController extends Controller
 {
     //Cette fonction affiche la page d'accueil
     public function accueil () {
-        return view('accueil');
+        $utilisateurs = Utilisateur::count();
+        $benefices = Benefice::count();
+        $clients = Client::count();
+        $retraits = Retrait::count();
+        $depots = Depot::count();
+        $partenaires = Partenaire::count();
+
+        $total_dep_caisse = Benefice::sum('total_dep_caisse');
+        $total_ret_caisse = Benefice::sum('total_ret_caisse');
+
+        $montant_benefice_retrait = Benefice::sum('montant_benefice_retrait');
+        $montant_benefice_depot = Benefice::sum('montant_benefice_depot');
+        $montant_benefice_attente = Benefice::sum('montant_benefice_attente');
+        
+        return view('accueil',compact("utilisateurs","benefices","clients","retraits","depots","partenaires","total_dep_caisse",
+                                    "total_ret_caisse","montant_benefice_retrait","montant_benefice_depot","montant_benefice_attente"));
     }
 
     public function creationcaisse () {

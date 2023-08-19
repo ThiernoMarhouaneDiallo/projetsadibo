@@ -18,7 +18,7 @@ class CreatePartenairesTable extends Migration
             $table->string("adresse_partenaire")->nullable();
             $table->string("email_partenaire")->nullable();
             $table->string("fonction_partenaire")->nullable();
-            $table->foreignId("utilisateur_id")->constrained("utilisateurs");
+            $table->foreignId("utilisateur_id")->constrained("users");
             $table->timestamps();
         });
         Schema::enableForeignKeyConstraints();

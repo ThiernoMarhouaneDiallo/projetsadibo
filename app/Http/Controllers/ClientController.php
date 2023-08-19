@@ -5,10 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Client;
 use App\Models\Utilisateur;
+use App\Models\User;
 class ClientController extends Controller
 {
     public function creationclient () {
-        $utilisateurs = Utilisateur::all();
+        $utilisateurs = User::all();
         return view('creationclient',compact("utilisateurs"));
     }
  
@@ -33,7 +34,8 @@ class ClientController extends Controller
         //     "age_user"=>$request->age_user
 
         // ]);
-        return back()->with("success","Client ajouté avec succés");
+        $clients = Client::orderBy("created_at","desc")->with('utilisateur')->get();
+        return view('listeclient',compact('clients'));
     }
 
     //Cette methode permet de modifier un client

@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 use App\Models\Receveur;
 use App\Models\Utilisateur;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ReceveurController extends Controller
 {
     public function creationreceveur () {
-        $utilisateurs = Utilisateur::all();
+        $utilisateurs = User::all();
         return view('creationreceveur',compact("utilisateurs"));
     }
  
