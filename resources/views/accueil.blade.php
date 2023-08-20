@@ -34,9 +34,6 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="{{route('accueil')}}" class="nav-link">Accueil</a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">A propos</a>
-      </li>
     </ul>
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
@@ -155,15 +152,10 @@
           <li class="nav-item">
             <a href="{{route('listecaisse')}}" class="nav-link">
               <i class="nav-icon far fa-circle text-info"></i>
-              <p>Benefices</p>
+              <p>Caisse</p>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="" class="nav-link">
-              <i class="nav-icon far fa-circle text-info"></i>
-              <p>Dettes</p>
-            </a>
-          </li>
+        
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

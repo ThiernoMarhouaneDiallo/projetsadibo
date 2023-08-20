@@ -24,6 +24,7 @@ class RetraitController extends Controller
     //cette fonction permet d'effectuer un paiement
     public function paiement (Request $request) {
         //Enregistrement du depot
+        
         Retrait::create([
             'code_retrait' =>$request->code_dep,
             'nom_rec_retrait' =>$request->nom_rec_dep,
@@ -31,10 +32,17 @@ class RetraitController extends Controller
             'montant_retrait' =>$request->montant_dep,
             'commission_retrait' =>$request->commission_dep,
             'taux_retrait' =>$request->taux_dep,
+            'montant_retrait_yuan' =>$request->montant_dep_yuan,
             'utilisateur_id' =>$request->utilisateur_id,
             'client_id' =>$request->client_id,
             'benefice_id' =>$request->benefice_id
         ]);
+
+
+        Depot::where('id',$request->depot_id)->update([
+            'statut' => 'Payé'
+        ]);
+                                                
 
         // Calcul solde du client 
         $montant_deposer = $request->montant_dep;

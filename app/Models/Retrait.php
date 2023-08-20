@@ -14,7 +14,7 @@ class Retrait extends Model
 {
     use HasFactory;
     protected $fillable=[
-        'code_retrait','nom_rec_retrait','numero_rec_retrait','montant_retrait','commission_retrait','taux_retrait','client_id','utilisateur_id','benefice_id'
+        'code_retrait','nom_rec_retrait','numero_rec_retrait','montant_retrait_yuan','montant_retrait','commission_retrait','taux_retrait','client_id','utilisateur_id','benefice_id'
     ];
 
     public function client()

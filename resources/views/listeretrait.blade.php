@@ -46,28 +46,30 @@
           <table id="example1" class="table table-bordered table-hover">
            <thead>
             <tr>
+            <th class="sorting sorting_asc" tabindex="1" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">Code</th>
             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Utilisateur</th>
               <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Client</th>
               <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Receveur</th>
               <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Numero Receveur</th>
-              <th class="sorting sorting_asc" tabindex="1" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">Code</th>
               <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Montant</th>
               <th class="sorting sorting_asc" tabindex="1" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">Commission</th>
               <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Taux</th>
+              <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Montant Yuan</th>
               <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Date</th>
             </tr>
               </thead>
             <tbody>
               @foreach($retraits as $retrait)
               <tr>
+              <th scope="row">{{$retrait->code_retrait}}</th>
               <td>{{$retrait->utilisateur->name}}</td>
               <td>{{$retrait->client->prenom_client.' '.$retrait->client->nom_client}}</td>
               <td>{{$retrait->nom_rec_retrait}}</td>
               <td>{{$retrait->numero_rec_retrait}}</td>
-              <th scope="row">{{$retrait->code_retrait}}</th>
               <td>{{$retrait->montant_retrait}}</td>
               <td>{{$retrait->commission_retrait}}</td>
               <td>{{$retrait->taux_retrait}}</td>
+              <td>{{$retrait->montant_retrait_yuan}}</td>
               <td>{{$retrait->created_at}}</td>
             </tr>
               @endforeach
@@ -99,7 +101,7 @@
 <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
 <script src="{{asset('plugins/jquery-ui/jquery-ui.min.js')}}"></script>
 <script src="{{asset('js/pages/dashboard.js')}}"></script>
-<script src="{{asset('js/demo.js')}}"></script>
+
 <script src="{{asset('js/adminlte.js')}}"></script>
 <script src="{{asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
 <script src="{{asset('plugins/summernote/summernote-bs4.min.js')}}"></script>

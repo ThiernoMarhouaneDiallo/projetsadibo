@@ -87,9 +87,15 @@
               <!-- right column -->
                 <div class="card-body col-6">     
                 <div class="form-group">
-                    <label for="">Utilisateur</label>
                     <input type="hidden" name="utilisateur_id" id="" value="{{ Auth::user()->id }}">
-                  </div>      
+                  </div> 
+                  <div class="form-group">
+                    <input type="hidden" name="depot_id" id="" value="{{$depot->id}}">
+                  </div>  
+                  <div class="form-group">
+                    <label for="">Montant Yuan</label>
+                    <input type="text" name="montant_dep_yuan" readonly="readonly" value="{{$depot->montant_dep_yuan}}" class="form-control" id="" placeholder="">
+                  </div>  
                   <div class="form-group">
                     <label for="">Client</label>
                     <input type="text" name="" value="{{$depot->client->prenom_client.' '.$depot->client->nom_client}}" readonly="readonly" class="form-control" id="" placeholder="">

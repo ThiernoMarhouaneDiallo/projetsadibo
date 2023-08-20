@@ -18,7 +18,9 @@ class CreateDepotsTable extends Migration
             $table->string("code_dep");
             $table->string("nom_rec_dep");
             $table->string("numero_rec_dep");
+            $table->string("statut");
             $table->double("montant_dep");
+            $table->double("montant_dep_yuan");
             $table->double("commission_dep");
             $table->double("taux_dep");
             $table->foreignId("utilisateur_id")->constrained("users");

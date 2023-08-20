@@ -49,11 +49,12 @@
               <th class="sorting sorting_asc" tabindex="1" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">Code</th>
               <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">Utilisateur</th>
               <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Client</th>
-              <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Receveur</th>
-              <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Num piéce receveur</th>
-              <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Montant</th>
-              <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Commission</th>
+              <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Numero Client</th>
+              <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Montant gnf</th>
+              <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Commission gnf</th>
               <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">Taux</th>
+              <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">Montant Yuan</th>
+              <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">Statut</th>
               <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">Date</th>
               <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Action</th>
              </tr>
@@ -64,11 +65,12 @@
               <th scope="row">{{$depot->code_dep}}</th>
               <td>{{$depot->utilisateur->name}}</td>
               <td>{{$depot->client->prenom_client.' '.$depot->client->nom_client}}</td>
-              <td>{{$depot->nom_rec_dep}}</td>
-              <td>{{$depot->numero_rec_dep}}</td>
+              <td>{{$depot->client->telephone_client}}</td>          
               <td>{{$depot->montant_dep}}</td>
               <td>{{$depot->commission_dep}}</td>
               <td>{{$depot->taux_dep}}</td>
+              <td>{{$depot->montant_dep_yuan}}</td>
+              <td>{{$depot->statut}}</td>
               <td>{{$depot->created_at}}</td>
               <td>
               <a class="btn btn-success" href="{{route('creationretrait',$depot->id)}}">Payer</a>

@@ -21,6 +21,7 @@ class CreateRetraitsTable extends Migration
             $table->double("montant_retrait");
             $table->double("commission_retrait");
             $table->double("taux_retrait");
+            $table->double("montant_retrait_yuan");
             $table->foreignId("utilisateur_id")->constrained("users");
             $table->foreignId("client_id")->constrained("clients");
             $table->foreignId("benefice_id")->constrained("benefices");

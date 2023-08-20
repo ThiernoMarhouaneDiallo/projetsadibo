@@ -25,7 +25,7 @@ class BeneficeController extends Controller
 
         $montant_benefice_retrait = Benefice::sum('montant_benefice_retrait');
         $montant_benefice_depot = Benefice::sum('montant_benefice_depot');
-        $montant_benefice_attente = Benefice::sum('montant_benefice_attente');
+        $montant_benefice_attente = $montant_benefice_depot - $montant_benefice_retrait ;
         
         return view('accueil',compact("utilisateurs","benefices","clients","retraits","depots","partenaires","total_dep_caisse",
                                     "total_ret_caisse","montant_benefice_retrait","montant_benefice_depot","montant_benefice_attente"));

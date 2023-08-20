@@ -54,7 +54,7 @@
               </ul>
             </div>
             @endif
-            <form id="quickForm" method="post" action="{{route('partenaire.ajouter')}}" novalidate="novalidate" >
+            <form id="quickForm" method="post" action="{{route('partenaire.ajouter')}}">
               @csrf
               <div class="row">
               <!-- left column -->
@@ -100,29 +100,19 @@
                 <div class="card-body col-6">
                 <div class="form-group">
                     <label for="">Telephone</label>
-                    <input type="tel" name="telephone_partenaire" class="form-control" id="" placeholder="Telephone partenaire">
+                    <input type="tel" name="telephone_partenaire" class="form-control" id="" placeholder="Telephone partenaire" required>
                   </div>
                   <div class="form-group">
                     <label for="">Adresse</label>
-                    <input type="text" name="adresse_partenaire" class="form-control" id="" placeholder="adresse partenaire">
-                  </div>
-                  <div class="form-group">
-                    <label for="">Fonction</label>
-                    <select class="form-control" name="fonction_partenaire">
-                      <option value="Administrateur" selected="selected">Administrateur</option>
-                      <option value="Caissier">Caissier</option>
-                      <option value="Partenaire">Partenaire</option>
-                      <option value="Utilisateur">Utilisateur</option>
-                      <option value="Livreur">Livreur</option>
-                    </select>
+                    <input type="text" name="adresse_partenaire" class="form-control" id="" placeholder="adresse partenaire" required>
                   </div>
                   <div class="form-group">
                     <label for="">Année de naissance</label>
-                    <input type="date" name="naissance_partenaire" class="form-control" id="" placeholder="Naissance partenaire">
+                    <input type="date" name="naissance_partenaire" class="form-control" id="" placeholder="Naissance partenaire" required>
                   </div>
                   <div class="form-group">
                     <label for="">Mot de passe</label>
-                    <input type="password" name="password_partenaire" class="form-control" id="" placeholder="">
+                    <input type="password" name="password_partenaire" class="form-control" id="" placeholder="" required>
                   </div>
                 </div>
               </div>    

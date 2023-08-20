@@ -14,7 +14,7 @@ class Depot extends Model
     use HasFactory;
 
     protected $fillable=[
-        'code_dep','nom_rec_dep','numero_rec_dep','montant_dep','commission_dep','taux_dep','benefice_id','client_id','utilisateur_id'
+        'code_dep','nom_rec_dep','montant_dep_yuan','statut','numero_rec_dep','montant_dep','commission_dep','taux_dep','benefice_id','client_id','utilisateur_id'
     ];
 
     public function client()
