@@ -58,7 +58,7 @@
               @csrf
               <div class="row">
               <!-- left column -->
-                <div class="card-body col-6">
+                <div class="card-body col-12 col-sm-6 col-md-6 col-lg-6">
                   <div class="form-group">
                     <label for="">Nom</label>
                     <input type="text" name="nom_partenaire" class="form-control" id="" placeholder="Nom partenaire" required>
@@ -92,12 +92,10 @@
                     <input type="text" name="num_piece_partenaire" class="form-control" id="" placeholder="Num partenaire" required>
                   </div>
                   
-                  <div class="card-footer">
-                    <button type="submit" class="btn btn-success">Enregistrer</button>
-                  </div>
+                  
                 </div>
               <!-- right column -->
-                <div class="card-body col-6">
+                <div class="card-body col-12 col-sm-6 col-md-6 col-lg-6">
                 <div class="form-group">
                     <label for="">Telephone</label>
                     <input type="tel" name="telephone_partenaire" class="form-control" id="" placeholder="Telephone partenaire" required>
@@ -115,6 +113,9 @@
                     <input type="password" name="password_partenaire" class="form-control" id="" placeholder="" required>
                   </div>
                 </div>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-success">Enregistrer</button>
+                  </div>
               </div>    
               <!-- /.card-body -->
             </form>

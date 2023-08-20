@@ -46,32 +46,18 @@
           <table id="example1" class="table table-bordered table-hover">
            <thead>
             <tr>
-              <th class="sorting sorting_asc" tabindex="1" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">Nom</th>
-              <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Prenom</th>
-              <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Email</th>
-              <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">Fonction</th>
-              <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Adresse</th>
-              <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Date</th>
-              <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Action</th>
-           </tr>
+              <th class="sorting sorting_asc" tabindex="1" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">Nom utilisateur</th>
+              <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Email Urilisateur</th>
+              <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Date de Creation</th>
+          
+            </tr>
               </thead>
             <tbody>
               @foreach($utilisateurs as $utilisateur)
               <tr>
-              <th scope="row">{{$utilisateur->nom_user}}</th>
-              <td>{{$utilisateur->prenom_user}}</td>
-              <td>{{$utilisateur->email_user}}</td>
-              <td>{{$utilisateur->fonction_user}}</td>
-              <td>{{$utilisateur->adresse_user}}</td>
+              <th scope="row">{{$utilisateur->name}}</th>
+              <td>{{$utilisateur->email}}</td>
               <td>{{$utilisateur->created_at}}</td>
-              <td>
-                <a href="#" class="btn btn-danger" onclick="if(confirm('Vouler vous vraiment supprimer cet element?')){document.getElementById('form-{{$utilisateur->id}}').submit()}">Supprimer</a>
-                <form id="form-{{$utilisateur->id}}" action="{{route('utilisateur.supprimer',['utilisateur'=>$utilisateur->id])}}" method="post">
-                  @csrf
-                  <input type="hidden" name="_method" value="delete">
-
-                </form>
-              </td>
             </tr>
               @endforeach
             

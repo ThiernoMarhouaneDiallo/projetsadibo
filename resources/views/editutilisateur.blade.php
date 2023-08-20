@@ -59,7 +59,7 @@
               <input type="hidden" name="_method" value="put">
               <div class="row">
               <!-- left column -->
-                <div class="card-body col-3">
+                <div class="card-body col-12 col-sm-6 col-md-6 col-lg-6">
                   <div class="form-group">
                     <label for="">Nom</label>
                     <input type="text" name="nom_user" class="form-control" id="" placeholder="Nom utilisateur" value="$utilisateur->nom_user">
@@ -88,12 +88,10 @@
                     <input type="text" name="num_piece_user" class="form-control" id="" placeholder="Num utilisateur" value="$utilisateur->num_piece_user">
                   </div>
                   
-                  <div class="card-footer">
-                    <button type="submit" class="btn btn-success">Enregistrer</button>
-                  </div>
+                 
                 </div>
               <!-- right column -->
-                <div class="card-body col-3">
+                <div class="card-body col-12 col-sm-6 col-md-6 col-lg-6">
                 <div class="form-group">
                     <label for="">Telephone</label>
                     <input type="tel" name="telephone_user" class="form-control" id="" placeholder="Telephone utilisateur" value="$utilisateur->telephone_user">
@@ -120,6 +118,9 @@
                     <label for="">Mot de passe</label>
                     <input type="password" name="password_user" class="form-control" id="" placeholder="" value="$utilisateur->password_user">
                   </div>
+                </div>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-success">Enregistrer</button>
                 </div>
               </div>    
               <!-- /.card-body -->

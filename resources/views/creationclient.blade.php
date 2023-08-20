@@ -63,7 +63,7 @@
               @csrf
               <div class="row">
               <!-- left column -->
-                <div class="card-body col-6">
+                <div class="card-body col-12 col-sm-6 col-md-6 col-lg-6">
                   <div class="form-group">
                     <label>Nom</label>
                     <input type="text" name="nom_client" class="form-control" id="" placeholder="Nom client"  required>
@@ -91,12 +91,10 @@
                     <input type="hidden" name="utilisateur_id" id="" value="{{ Auth::user()->id }}">
                   </div>
               
-                  <div class="card-footer">
-                    <button type="submit" class="btn btn-success">Enregistrer</button>
-                  </div>
+                  
                 </div>
               <!-- right column -->
-                <div class="card-body col-6">
+                <div class="card-body col-12 col-sm-6 col-md-6 col-lg-6">
                   
                   <div class="form-group">
                     <label for="">Telephone</label>
@@ -110,7 +108,11 @@
                     <label for="">Solde</label>
                     <input type="text" name="solde_client" class="form-control" value="0" readonly="readonly" id="" placeholder="solde client">
                   </div>
+                  
                 </div>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-success">Enregistrer</button>
+                  </div>
               </div>    
               <!-- /.card-body -->
             </form>
@@ -147,7 +149,6 @@
 <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
 <script src="{{asset('plugins/jquery-ui/jquery-ui.min.js')}}"></script>
 <script src="{{asset('js/pages/dashboard.js')}}"></script>
-<script src="{{asset('js/demo.js')}}"></script>
 <script src="{{asset('js/adminlte.js')}}"></script>
 <script src="{{asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
 <script src="{{asset('plugins/summernote/summernote-bs4.min.js')}}"></script>

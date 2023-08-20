@@ -59,7 +59,7 @@
               {{ method_field('PUT')}}
               <div class="row">
                <!-- left column -->
-               <div class="card-body col-6">
+               <div class="card-body col-12 col-sm-6 col-md-6 col-lg-6">
                   <div class="form-group">
                     <label for="">Nom</label>
                     <input type="text" name="nom_client" value="{{$client->nom_client}}" class="form-control" id="" placeholder="">
@@ -72,12 +72,10 @@
                     <label for="">Num Piéce</label>
                     <input type="text" name="num_piece_client" value="{{$client->num_piece_client}}" class="form-control" id="" placeholder="Num client">
                   </div>           
-                  <div class="card-footer">
-                    <button type="submit" class="btn btn-success">Enregistrer</button>
-                  </div>
+                  
                 </div>
               <!-- right column -->
-                <div class="card-body col-6">
+                <div class="card-body col-12 col-sm-6 col-md-6 col-lg-6">
                  
                  <div class="form-group">
                     <label for="">Telephone</label>
@@ -88,6 +86,9 @@
                     <input type="text" name="adresse_client" value="{{$client->adresse_client}}" class="form-control" id="" placeholder="adresse client">
                   </div>
                 </div>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-success">Enregistrer</button>
+                  </div>
               </div>    
               <!-- /.card-body -->
             </form>

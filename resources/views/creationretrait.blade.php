@@ -59,7 +59,7 @@
               
               <div class="row">
               <!-- left column -->
-              <div class="card-body col-6">
+              <div class="card-body col-12 col-sm-6 col-md-6 col-lg-6">
                   <div class="form-group">
                     <label for="">Code</label>
                     <input type="text" name="code_dep" readonly="readonly" value="{{$depot->code_dep}}" class="form-control" id="" placeholder="">
@@ -80,12 +80,10 @@
                   <input type="hidden" name="client_id" value="{{$depot->client_id}}" class="form-control" id="" placeholder="r">
                   <input type="hidden" name="receveur_id" value="{{$depot->receveur_id}}" class="form-control" id="" placeholder="r">
                   <input type="hidden" name="benefice_id" value="{{$depot->benefice_id}}" class="form-control" id="" placeholder="r">    
-                  <div class="card-footer">
-                    <button type="submit" class="btn btn-success">Effectuer le paiement</button>
-                  </div>
+                  
                 </div>
               <!-- right column -->
-                <div class="card-body col-6">     
+                <div class="card-body col-12 col-sm-6 col-md-6 col-lg-6">     
                 <div class="form-group">
                     <input type="hidden" name="utilisateur_id" id="" value="{{ Auth::user()->id }}">
                   </div> 
@@ -109,6 +107,9 @@
                     <input type="text" name="numero_rec_dep" value="{{$depot->numero_rec_dep}}" class="form-control" id="" placeholder=""required>
                   </div>    
                 </div>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-success">Effectuer le paiement</button>
+                  </div>
               </div>    
               <!-- /.card-body -->
             </form>
@@ -145,7 +146,6 @@
 <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
 <script src="{{asset('plugins/jquery-ui/jquery-ui.min.js')}}"></script>
 <script src="{{asset('js/pages/dashboard.js')}}"></script>
-<script src="{{asset('js/demo.js')}}"></script>
 <script src="{{asset('js/adminlte.js')}}"></script>
 <script src="{{asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
 <script src="{{asset('plugins/summernote/summernote-bs4.min.js')}}"></script>

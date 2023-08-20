@@ -59,7 +59,7 @@
               
               <div class="row">
               <!-- left column -->
-              <div class="card-body col-12">
+              <div class="card-body col-12 col-sm-6 col-md-6 col-lg-6">
                   <div class="form-group">
                     <label for="">Nom</label>
                     <input type="text" name="nom_caisse"  class="form-control" id="" placeholder="Nom caisse">
@@ -88,10 +88,11 @@
                     <input type="hidden" name="montant_benefice_attente" value="0" readonly="readonly"  class="form-control" id="" placeholder="">
                   </div>    
                   <input type="hidden" name="utilisateur_id"  class="form-control" id="" placeholder="r">      
-                  <div class="card-footer">
+                  
+                </div>
+                <div class="card-footer">
                     <button type="submit" class="btn btn-success">Enregistrer</button>
                   </div>
-                </div>
               </div>    
               <!-- /.card-body -->
             </form>

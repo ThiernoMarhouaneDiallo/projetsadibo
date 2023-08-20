@@ -58,7 +58,7 @@
               @csrf
               <div class="row">
               <!-- left column -->
-                <div class="card-body col-6">
+                <div class="card-body col-12 col-sm-6 col-md-6 col-lg-6">
                   <div class="form-group">
                     <label for="">Code</label>
                     <input type="text" name="code_dep" class="form-control" id="" placeholder="Nom receveur" required>
@@ -75,12 +75,10 @@
                     <label for="">Taux d'echange</label>
                     <input type="text" name="taux_dep" class="form-control" id="" placeholder="Prenom receveur" required>
                   </div>            
-                  <div class="card-footer">
-                    <button type="submit" class="btn btn-success">Enregistrer</button>
-                  </div>
+                  
                 </div>
               <!-- right column -->
-                <div class="card-body col-6">
+                <div class="card-body col-12 col-sm-6 col-md-6 col-lg-6">
                  <div class="form-group">
                     <input type="hidden" name="utilisateur_id" id="" value="{{ Auth::user()->id }}">
                   </div>  
@@ -111,6 +109,9 @@
                     <input type="text" name="numero_rec_dep" class="form-control" id="" placeholder="Numero receveur" required>
                   </div>
                 </div>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-success">Enregistrer</button>
+                  </div>
               </div>    
               <!-- /.card-body -->
             </form>

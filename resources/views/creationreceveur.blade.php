@@ -58,7 +58,7 @@
               @csrf
               <div class="row">
               <!-- left column -->
-                <div class="card-body col-6">
+                <div class="card-body col-12 col-sm-6 col-md-6 col-lg-6">
                   <div class="form-group">
                     <label for="">Nom</label>
                     <input type="text" name="nom_receveur" class="form-control" id="" placeholder="Nom receveur" required>
@@ -82,12 +82,10 @@
                     <label for="">Utilisateur</label>
                     <input type="hidden" name="utilisateur_id" id="" value="{{ Auth::user()->id }}">
                   </div>                  
-                  <div class="card-footer">
-                    <button type="submit" class="btn btn-success">Enregistrer</button>
-                  </div>
+                  
                 </div>
               <!-- right column -->
-                <div class="card-body col-6">
+                <div class="card-body col-12 col-sm-6 col-md-6 col-lg-6">
                  <div class="form-group">
                     <label for="">Num Piéce</label>
                     <input type="text" name="num_piece_receveur" class="form-control" id="" placeholder="Num receveur" required>
@@ -101,6 +99,9 @@
                     <input type="text" name="adresse_receveur" class="form-control" id="" placeholder="adresse receveur" required>
                   </div>
                 </div>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-success">Enregistrer</button>
+                  </div>
               </div>    
               <!-- /.card-body -->
             </form>

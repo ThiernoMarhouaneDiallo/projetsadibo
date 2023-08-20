@@ -60,7 +60,7 @@
               <input type="hidden" name="client_id" value="{{$depot->client->id}}">
               <div class="row">
               <!-- left column -->
-                <div class="card-body col-6">
+                <div class="card-body col-12 col-sm-6 col-md-6 col-lg-6">
                   <div class="form-group">
                     <label for="">Code</label>
                     <input type="text" name="code_dep" value="{{$depot->code_dep}}" class="form-control" id="" placeholder="Nom receveur">
@@ -77,12 +77,10 @@
                     <label for="">Taux d'echange</label>
                     <input type="text" name="taux_dep" value="{{$depot->taux_dep}}" class="form-control" id="" placeholder="Prenom receveur">
                   </div>            
-                  <div class="card-footer">
-                    <button type="submit" class="btn btn-success">Enregistrer</button>
-                  </div>
+                  
                 </div>
               <!-- right column -->
-                <div class="card-body col-6">
+                <div class="card-body col-12 col-sm-6 col-md-6 col-lg-6">
                   <div class="form-group">
                     <label for="">Utilisateur</label>
                     <input type="hidden" name="utilisateur_id" id="" value="{{ Auth::user()->id }}">
@@ -103,6 +101,9 @@
                     <!-- <input type="hidden" name="client_id"  class="form-control" id="" placeholder="Nom receveur"> -->
                     
                 </div>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-success">Enregistrer</button>
+                  </div>
               </div>    
               <!-- /.card-body -->
             </form>

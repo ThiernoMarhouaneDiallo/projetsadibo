@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Utilisateur;
+use App\Models\User;
 use App\Models\Benefice;
 use App\Models\Partenaire;
 use App\Models\Client;
@@ -13,7 +14,7 @@ class BeneficeController extends Controller
 {
     //Cette fonction affiche la page d'accueil
     public function accueil () {
-        $utilisateurs = Utilisateur::count();
+        $utilisateurs = User::count();
         $benefices = Benefice::count();
         $clients = Client::count();
         $retraits = Retrait::count();

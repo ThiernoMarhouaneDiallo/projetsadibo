@@ -39,23 +39,18 @@
     <ul class="navbar-nav ml-auto">
       <!-- Navbar Search -->
       <li class="nav-item">
-        <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-          <i class="fas fa-search"></i>
-        </a>
-        <div class="navbar-search-block">
-          <form class="form-inline">
-            <div class="input-group input-group-sm">
-              <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-              <div class="input-group-append">
-                <button class="btn btn-navbar" type="submit">
-                  <i class="fas fa-search"></i>
-                </button>
-                <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                  <i class="fas fa-times"></i>
-                </button>
-              </div>
-            </div>
+        <div class="navbar-search-blocks">
+          <form method="POST" action="{{ route('logout') }}">
+            @csrf
+            <button class="btn btn-primary" type="submit">Deconnexion</button>
           </form>
+        </div>
+      </li>
+      <li class="nav-item">
+        <div class="">
+
+           <a href="/user/profile"><button class="btn btn-success" type="submit"> Profile</button></a> 
+          
         </div>
       </li>
       <li class="nav-item">
@@ -113,12 +108,14 @@
               </li>
             </ul>
           </li>
+          @role('Administrateur')
           <li class="nav-item">
             <a href="{{route('listeutilisateur')}}" class="nav-link">
               <i class="nav-icon far fa-circle text-info"></i>
               <p>Employés</p>
             </a>
           </li>
+          @endrole
           <li class="nav-item">
             <a href="{{route('listeclient')}}" class="nav-link">
               <i class="nav-icon far fa-circle text-info"></i>
@@ -149,13 +146,14 @@
               <p>Partenaire</p>
             </a>
           </li>
+          @role('Administrateur')
           <li class="nav-item">
             <a href="{{route('listecaisse')}}" class="nav-link">
               <i class="nav-icon far fa-circle text-info"></i>
               <p>Caisse</p>
             </a>
           </li>
-        
+          @endrole
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -184,6 +182,7 @@
         <!-- Debut Row 1 -->
         <div class="row">
           <div class="col-lg-3 col-6">
+          @role('Administrateur')
             <div class="small-box ">
               <div class="inner text-center">
                 <h4>Total Employés</h4>
@@ -194,6 +193,7 @@
               </div>
               <a href="{{route('listeutilisateur')}}" class="small-box-footer bg-info">Voir plus <i class="fas fa-arrow-circle-right"></i></a>
             </div>
+            @endrole
           </div>
           <div class="col-lg-3 col-6">
             <div class="small-box ">
@@ -235,6 +235,7 @@
         <!-- Fin row 1 -->
 
         <!-- Debut row 2 -->
+        @role('Adminministrateur')
         <div class="row">
           <div class="col-lg-3 col-6">
             <div class="small-box ">
@@ -261,8 +262,10 @@
             </div>
           </div>
           <!-- ./col -->
+          
           <div class="col-lg-3 col-6">
             <!-- small box -->
+            
             <div class="small-box ">
               <div class="inner text-center">
                 <h4>benefice depots</h4>
@@ -290,10 +293,11 @@
           </div>
           <!-- ./col -->
         </div>
-
+        @endrole
         <!-- Debut row 3 -->
         <div class="row">
           <div class="col-lg-3 col-6">
+          @role('Administrateur')
             <div class="small-box ">
               <div class="inner text-center">
                 <h4>benefice en attente</h4>
@@ -304,6 +308,7 @@
               </div>
               <a href="{{route('listecaisse')}}" class="small-box-footer bg-info">Voir plus <i class="fas fa-arrow-circle-right"></i></a>
             </div>
+            @endrole
           </div>
           <div class="col-lg-3 col-6">
             <!-- small box -->
@@ -318,21 +323,7 @@
               <a href="{{route('listepartenaire')}}" class="small-box-footer bg-danger">Voir plus <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
-          @role('Admin')
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box ">
-              <div class="inner text-center">
-                <h4>Total partenaires</h4>
-                <h5>{{$partenaires}}</h5>
-              </div>
-              <div class="icon">
-                <i class="ion ion-pie-graph"></i>
-              </div>
-              <a href="{{route('listepartenaire')}}" class="small-box-footer bg-danger">Voir plus <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          @endrole
+          
           <!-- ./col -->
         </div>
         </div>
