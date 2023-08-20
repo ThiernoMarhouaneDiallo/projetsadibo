@@ -70,8 +70,9 @@
               <a class="btn btn-primary" href="{{route('edite_client',$client->id)}}">Edite</a>
                 <a href="#" class="btn btn-danger" onclick="if(confirm('Vouler vous vraiment supprimer cet element?')){document.getElementById('form-{{$client->id}}').submit()}">Supprimer</a>
                 <form id="form-{{$client->id}}" action="{{route('client.supprimer',
-                  ['client'=>$client->id])}}" method="post">
+                  ['client'=>$client->id])}}" method="POST">
                   @csrf
+                
                   <input type="hidden" name="_method" value="delete">
 
                 </form>

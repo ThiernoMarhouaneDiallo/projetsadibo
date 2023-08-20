@@ -61,19 +61,19 @@
                 <div class="card-body col-12 col-sm-6 col-md-6 col-lg-6">
                   <div class="form-group">
                     <label for="">Code</label>
-                    <input type="text" name="code_dep" class="form-control" id="" placeholder="Nom receveur" required>
+                    <input type="text" name="code_dep" class="form-control" id="" placeholder="Code" required>
                   </div>
                   <div class="form-group">
                     <label for="">Montant</label>
-                    <input type="text" name="montant_dep" class="form-control" id="" placeholder="Prenom receveur" required>
+                    <input type="text" name="montant_dep" class="form-control" id="" placeholder="Montant" required>
                   </div>
                   <div class="form-group">
                     <label for="">Commission</label>
-                    <input type="text" name="commission_dep" class="form-control" id="" placeholder="Prenom receveur" required>
+                    <input type="text" name="commission_dep" class="form-control" id="" placeholder="Commission" required>
                   </div>
                   <div class="form-group">
                     <label for="">Taux d'echange</label>
-                    <input type="text" name="taux_dep" class="form-control" id="" placeholder="Prenom receveur" required>
+                    <input type="text" name="taux_dep" class="form-control" id="" placeholder="Taux d'echange" required>
                   </div>            
                   
                 </div>
@@ -148,7 +148,6 @@
 <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
 <script src="{{asset('plugins/jquery-ui/jquery-ui.min.js')}}"></script>
 <script src="{{asset('js/pages/dashboard.js')}}"></script>
-<script src="{{asset('js/demo.js')}}"></script>
 <script src="{{asset('js/adminlte.js')}}"></script>
 <script src="{{asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
 <script src="{{asset('plugins/summernote/summernote-bs4.min.js')}}"></script>
