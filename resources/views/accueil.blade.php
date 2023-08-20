@@ -235,7 +235,7 @@
         <!-- Fin row 1 -->
 
         <!-- Debut row 2 -->
-        @role('Adminministrateur')
+        @role('Administrateur')
         <div class="row">
           <div class="col-lg-3 col-6">
             <div class="small-box ">
